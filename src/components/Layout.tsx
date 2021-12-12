@@ -22,6 +22,7 @@ export const Wrapper = (props: any) => {
           <img
             src="https://jitera.com/packs/media/styles/img/logo-jitera-white-0cba213098fb44f164173063eaef1f34.svg"
             style={{ width: "100px" }}
+            alt="logo"
           />
         </Header>
 
