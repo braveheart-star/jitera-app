@@ -6,11 +6,8 @@ import {
   MailOutlined,
   PhoneOutlined,
   GlobalOutlined,
-  SettingOutlined,
   EditOutlined,
-  EllipsisOutlined,
   HeartOutlined,
-  DeleteOutlined,
   DeleteFilled,
 } from "@ant-design/icons";
 
@@ -19,7 +16,12 @@ const { Meta } = Card;
 export const HomePage = () => {
   const [userData, setUserData] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log("userData: ", userData);
+
+  const itemStyles = {
+    marginLeft: "10px",
+    color: "rgba(0, 0, 0, 0.7)",
+  };
+
   useEffect(() => {
     const fetchUserData = async () => {
       setLoading(true);
@@ -39,8 +41,8 @@ export const HomePage = () => {
     <Wrapper>
       <Row
         gutter={[
-          { xs: 8, sm: 16, md: 24, lg: 32 },
-          { xs: 16, sm: 16, md: 24, lg: 32 },
+          { sm: 16, md: 24 },
+          { xs: 16, sm: 16, md: 16 },
         ]}
       >
         {userData.map((item: any) => (
@@ -75,38 +77,17 @@ export const HomePage = () => {
                   <div>
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <MailOutlined />
-                      <Typography
-                        style={{
-                          marginLeft: "10px",
-                          color: "rgba(0, 0, 0, 0.7)",
-                        }}
-                      >
-                        {item.email}
-                      </Typography>
+                      <Typography style={itemStyles}>{item.email}</Typography>
                     </div>
 
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <PhoneOutlined />
-                      <Typography
-                        style={{
-                          marginLeft: "10px",
-                          color: "rgba(0, 0, 0, 0.7)",
-                        }}
-                      >
-                        {item.phone}
-                      </Typography>
+                      <Typography style={itemStyles}>{item.phone}</Typography>
                     </div>
 
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <GlobalOutlined />
-                      <Typography
-                        style={{
-                          marginLeft: "10px",
-                          color: "rgba(0, 0, 0, 0.7)",
-                        }}
-                      >
-                        {item.website}
-                      </Typography>
+                      <Typography style={itemStyles}>{item.website}</Typography>
                     </div>
                   </div>
                 }

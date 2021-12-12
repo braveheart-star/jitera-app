@@ -28,9 +28,7 @@ export const Wrapper = (props: any) => {
         <Content
           style={{
             margin: "24px auto",
-            // padding: 24,
             maxWidth: "1250px",
-            // border: "1px solid black",
           }}
         >
           {props.children}
