@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "antd";
-import { Wrapper } from "../components/Layout";
 
-import { ItemType } from "../interface";
-import { ItemDetail } from "../components/ItemDetail";
+import { UserType } from "../interface";
+import { Wrapper } from "../components/Layout";
+import { UserDetail } from "../components/UserDetail";
 
 export const HomePage = () => {
-  const [userData, setUserData] = useState<ItemType[]>([]);
+  const [userData, setUserData] = useState<UserType[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -36,9 +36,9 @@ export const HomePage = () => {
           { xs: 16, sm: 16, md: 16 },
         ]}
       >
-        {userData.map((user: ItemType) => (
+        {userData.map((user: UserType) => (
           <Col xs={24} xl={6} lg={8} sm={12} key={user.id}>
-            <ItemDetail item={user} />
+            <UserDetail user={user} />
           </Col>
         ))}
       </Row>

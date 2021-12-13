@@ -9,12 +9,12 @@ import {
 } from "@ant-design/icons";
 import { Card, Typography } from "antd";
 
-import { ItemType } from "../interface";
+import { UserType } from "../interface";
 
 const { Meta } = Card;
 
-export const ItemDetail = (props: { item: ItemType }) => {
-  const { item } = props;
+export const UserDetail = (props: { user: UserType }) => {
+  const { user } = props;
 
   const itemStyles = {
     marginLeft: "10px",
@@ -34,7 +34,7 @@ export const ItemDetail = (props: { item: ItemType }) => {
           <img
             style={{ maxWidth: "100%", width: "200px", margin: "auto" }}
             alt="avatar"
-            src={`https://avatars.dicebear.com/v2/avataaars/${item.name}.svg?options[mood][]=happy`}
+            src={`https://avatars.dicebear.com/v2/avataaars/${user.name}.svg?options[mood][]=happy`}
           />
         </div>
       }
@@ -45,22 +45,22 @@ export const ItemDetail = (props: { item: ItemType }) => {
       ]}
     >
       <Meta
-        title={item.name}
+        title={user.name}
         description={
           <div>
             <div style={{ display: "flex", alignItems: "center" }}>
               <MailOutlined />
-              <Typography style={itemStyles}>{item.email}</Typography>
+              <Typography style={itemStyles}>{user.email}</Typography>
             </div>
 
             <div style={{ display: "flex", alignItems: "center" }}>
               <PhoneOutlined />
-              <Typography style={itemStyles}>{item.phone}</Typography>
+              <Typography style={itemStyles}>{user.phone}</Typography>
             </div>
 
             <div style={{ display: "flex", alignItems: "center" }}>
               <GlobalOutlined />
-              <Typography style={itemStyles}>{item.website}</Typography>
+              <Typography style={itemStyles}>{user.website}</Typography>
             </div>
           </div>
         }
